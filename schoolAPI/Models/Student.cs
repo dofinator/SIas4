@@ -10,7 +10,6 @@ namespace schoolAPI.Models
         public string Name { get; set; }
         [Required]
         public string Email { get; set; }
-
-        public List<StudyProgramme> AttendingProgrammes { get; set; } = new List<StudyProgramme>();
+        public ICollection<StudentStudyProgramme> StudentStudyProgramme { get; set; }
     }
 }

@@ -15,12 +15,29 @@ namespace schoolAPI.Controllers
             _studentService = studentService;
         }
 
-        [Route("/create")]
+        [Route("")]
         [HttpPost]
         public async Task<bool> CreateStudent(StudentDTO studentDTO)
         {
             return await _studentService.CreateStudent(studentDTO);
         }
-
+        [Route("")]
+        [HttpGet]
+        public async Task <StudentDTO> FindStudent(long id)
+        {
+            return await _studentService.FindStudent(id);
+        }
+        [Route("")]
+        [HttpDelete]
+        public async Task <bool> DeleteStudent (long id)
+        {
+            return await _studentService.DeleteStudent(id);
+        }
+        [Route("")]
+        [HttpPatch]
+        public async Task <bool> UpdateStudent(long id, StudentDTO studentDTO)
+        {
+            return await _studentService.UpdateStudent(id, studentDTO);
+        }
     }
 }

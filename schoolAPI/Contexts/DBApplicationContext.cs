@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using schoolAPI.Models;
+using System.Reflection.Emit;
 
 namespace schoolAPI.Contexts
 
@@ -10,6 +11,7 @@ namespace schoolAPI.Contexts
 
         public DbSet<Student> Students { get; set; }
         public DbSet<StudyProgramme> StudyProgrammes { get; set; }
+        public DbSet<StudentStudyProgramme> StudentStudyProgrammes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -19,7 +21,32 @@ namespace schoolAPI.Contexts
 
         private void Seed(ModelBuilder builder)
         {
-           
+            
+
+            builder.Entity<StudentStudyProgramme>().HasKey(x => new { x.StudentId, x.StudyProgrammeId });
+            builder.Entity<StudentStudyProgramme>().HasOne(x => x.Student).WithMany(y => y.StudentStudyProgramme).HasForeignKey(x => x.StudentId);
+            builder.Entity<StudentStudyProgramme>().HasOne(x => x.StudyProgramme).WithMany(y => y.StudentStudyProgramme).HasForeignKey(x => x.StudyProgrammeId);
+
+
+
+
+            builder.Entity<Student>().HasData(
+                new Student { Name = "asd", Email = "dsd", Id = 1 },
+                new Student { Name = "jeasdasdwadns", Email = "fsdff", Id = 2 },
+                new Student { Name = "sdfsdfasf", Email = "asdasdfdsf", Id = 3 }
+                );
+
+
+            builder.Entity<StudyProgramme>().HasData(
+                new StudyProgramme { Name = "System Integration", Id = 1 },
+                new StudyProgramme { Name = "Development of Large Systems", Id = 2 },
+                new StudyProgramme { Name = "Test", Id = 3 }
+            );
+
+
+            builder.Entity<StudentStudyProgramme>().HasData(
+                new StudentStudyProgramme { StudentId = 1, StudyProgrammeId = 1});
+
         }
     }
 }

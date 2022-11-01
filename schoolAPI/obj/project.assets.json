@@ -10137,19 +10137,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chris\\.nuget\\packages\\": {}
+    "C:\\Users\\lukas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\Documents\\2SemesterSoftwareudvikler\\System integration\\SIassignment4\\schoolAPI\\schoolAPI.csproj",
+      "projectUniqueName": "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\schoolAPI.csproj",
       "projectName": "schoolAPI",
-      "projectPath": "C:\\Users\\chris\\Documents\\2SemesterSoftwareudvikler\\System integration\\SIassignment4\\schoolAPI\\schoolAPI.csproj",
-      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\Documents\\2SemesterSoftwareudvikler\\System integration\\SIassignment4\\schoolAPI\\obj\\",
+      "projectPath": "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\schoolAPI.csproj",
+      "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -10221,7 +10221,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

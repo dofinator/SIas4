@@ -6,9 +6,9 @@ namespace schoolAPI.Repository
     public interface IStudentRepository
     {
         public Task<bool> CreateStudent(Student student);
-        public Task<bool> UpdateStudent(Student student);
-        public Task<bool> DeleteStudent(int id);
-        public Task<Student> FindStudent(int id);
+        public Task<bool> UpdateStudent(long id, Student student);
+        public Task<bool> DeleteStudent(long id);
+        public Task<Student> FindStudent(long id);
 
     }
     public class StudentRepository : IStudentRepository
@@ -37,19 +37,57 @@ namespace schoolAPI.Repository
             
         }
 
-        public Task<bool> DeleteStudent(int id)
+        public async Task<bool> DeleteStudent(long id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Student student = await _context.Students.FindAsync(id);
+                  _context.Remove(student);
+                await _context.SaveChangesAsync();
+
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+           
         }
 
-        public Task<Student> FindStudent(int id)
+        public async Task<Student> FindStudent(long id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Student student = await _context.Students.FindAsync(id);
+                return student;
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+                throw;
+            }
+            
         }
 
-        public Task<bool> UpdateStudent(Student student)
+        public async Task<bool> UpdateStudent(long id, Student student)
         {
-            throw new NotImplementedException();
+            try
+            {
+                
+                Student studentToBeUpdated = await _context.Students.FindAsync(id);
+                studentToBeUpdated.Name = student.Name;
+                studentToBeUpdated.Email = student.Email;
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            
         }
     }
 }

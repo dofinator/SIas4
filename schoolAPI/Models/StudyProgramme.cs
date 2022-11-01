@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.VisualBasic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace schoolAPI.Models
@@ -11,6 +12,6 @@ namespace schoolAPI.Models
         [Required]
         public string Name { get; set; }
 
-        public List<Student> AttendingStudents = new List<Student>();
+        public ICollection<StudentStudyProgramme> StudentStudyProgramme { get; set; }
     }
 }

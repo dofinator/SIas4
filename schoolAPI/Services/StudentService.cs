@@ -1,4 +1,5 @@
-﻿using schoolAPI.DTO;
+﻿using Microsoft.CodeAnalysis.VisualBasic.Syntax;
+using schoolAPI.DTO;
 using schoolAPI.Models;
 using schoolAPI.Repository;
 
@@ -7,9 +8,9 @@ namespace schoolAPI.Services
     public interface IStudentService
     {
         public Task<bool> CreateStudent(StudentDTO student);
-        public Task<bool> UpdateStudent(StudentDTO student);
-        public Task<bool> DeleteStudent(int id);
-        public Task<StudentDTO> FindStudent(int id);
+        public Task<bool> UpdateStudent(long id, StudentDTO student);
+        public Task<bool> DeleteStudent(long id);
+        public Task<StudentDTO> FindStudent(long id);
     }
     public class StudentService : IStudentService
     {
@@ -40,19 +41,36 @@ namespace schoolAPI.Services
             
         }
 
-        public Task<bool> DeleteStudent(int id)
+        public async Task<bool> DeleteStudent(long id)
         {
-            throw new NotImplementedException();
+            return await _studentRepository.DeleteStudent(id);
         }
 
-        public Task<StudentDTO> FindStudent(int id)
+        public async Task<StudentDTO> FindStudent(long id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Student student = await _studentRepository.FindStudent(id);
+                return  new StudentDTO { Name= student.Name, Email = student.Email };
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
-        public Task<bool> UpdateStudent(StudentDTO student)
+        public async Task<bool> UpdateStudent(long id, StudentDTO student)
         {
-            throw new NotImplementedException();
+            try
+            {
+                return await _studentRepository.UpdateStudent(id, new Student { Name = student.Name, Email = student.Email });
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
     }
 }
