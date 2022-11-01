@@ -1,4 +1,5 @@
-﻿using schoolAPI.Models;
+﻿using schoolAPI.Contexts;
+using schoolAPI.Models;
 
 namespace schoolAPI.Repository
 {
@@ -12,9 +13,28 @@ namespace schoolAPI.Repository
     }
     public class StudentRepository : IStudentRepository
     {
-        public Task<bool> CreateStudent(Student student)
+        private readonly DbApplicationContext _context;
+        public StudentRepository(DbApplicationContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+        public async Task<bool> CreateStudent(Student student)
+        {
+            try
+            {
+                await _context.Students.AddAsync(student);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+
+
+            }
+            
         }
 
         public Task<bool> DeleteStudent(int id)

@@ -19,7 +19,7 @@ namespace schoolAPI.Contexts
 
         private void Seed(ModelBuilder builder)
         {
-           builder.Entity<Student>().Property(_ => _.Name).IsRequired(True)
+           
         }
     }
 }
