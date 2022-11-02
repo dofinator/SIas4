@@ -1,28 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\schoolAPI.csproj": {}
+    "C:\\Users\\phillip\\Desktop\\SI - Assignment\\SIas4\\schoolAPI\\schoolAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\schoolAPI.csproj": {
+    "C:\\Users\\phillip\\Desktop\\SI - Assignment\\SIas4\\schoolAPI\\schoolAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\schoolAPI.csproj",
+        "projectUniqueName": "C:\\Users\\phillip\\Desktop\\SI - Assignment\\SIas4\\schoolAPI\\schoolAPI.csproj",
         "projectName": "schoolAPI",
-        "projectPath": "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\schoolAPI.csproj",
-        "packagesPath": "C:\\Users\\lukas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lukas\\Skrivebord\\SOFT 2 SEM\\System Integration\\Afleveringer\\3\\SIas4\\schoolAPI\\obj\\",
+        "projectPath": "C:\\Users\\phillip\\Desktop\\SI - Assignment\\SIas4\\schoolAPI\\schoolAPI.csproj",
+        "packagesPath": "C:\\Users\\phillip\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\phillip\\Desktop\\SI - Assignment\\SIas4\\schoolAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\lukas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\phillip\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\System\\Components\\Packages": {},
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Users\\phillip\\Desktop\\NuGetPackages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/ZbK5njfbJco11T9pcL4F9qT4onxMvHTKRsoT9ZqT5E1PKrEhuL/api": {}
         },
         "frameworks": {
           "net6.0": {
@@ -73,8 +82,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -86,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

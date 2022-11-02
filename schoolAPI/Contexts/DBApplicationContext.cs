@@ -28,12 +28,10 @@ namespace schoolAPI.Contexts
             builder.Entity<StudentStudyProgramme>().HasOne(x => x.StudyProgramme).WithMany(y => y.StudentStudyProgramme).HasForeignKey(x => x.StudyProgrammeId);
 
 
-
-
             builder.Entity<Student>().HasData(
-                new Student { Name = "asd", Email = "dsd", Id = 1 },
-                new Student { Name = "jeasdasdwadns", Email = "fsdff", Id = 2 },
-                new Student { Name = "sdfsdfasf", Email = "asdasdfdsf", Id = 3 }
+                new Student { Name = "Phillip", Email = "Phillip@gmail.com", Id = 1 },
+                new Student { Name = "Lukas", Email = "Lukas@gmail.com", Id = 2 },
+                new Student { Name = "Christoffer", Email = "Christoffer@gmail.com", Id = 3 }
                 );
 
 
