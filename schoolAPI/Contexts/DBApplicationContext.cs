@@ -23,9 +23,21 @@ namespace schoolAPI.Contexts
         {
             
 
-            builder.Entity<StudentStudyProgramme>().HasKey(x => new { x.StudentId, x.StudyProgrammeId });
-            builder.Entity<StudentStudyProgramme>().HasOne(x => x.Student).WithMany(y => y.StudentStudyProgramme).HasForeignKey(x => x.StudentId);
-            builder.Entity<StudentStudyProgramme>().HasOne(x => x.StudyProgramme).WithMany(y => y.StudentStudyProgramme).HasForeignKey(x => x.StudyProgrammeId);
+            builder
+                .Entity<StudentStudyProgramme>()
+                .HasKey(x => new { x.StudentId, x.StudyProgrammeId });
+
+            builder
+                .Entity<StudentStudyProgramme>()
+                .HasOne(x => x.Student)
+                .WithMany(y => y.StudentStudyProgramme)
+                .HasForeignKey(x => x.StudentId);
+
+            builder
+                .Entity<StudentStudyProgramme>()
+                .HasOne(x => x.StudyProgramme)
+                .WithMany(y => y.StudentStudyProgramme)
+                .HasForeignKey(x => x.StudyProgrammeId);
 
 
             builder.Entity<Student>().HasData(
