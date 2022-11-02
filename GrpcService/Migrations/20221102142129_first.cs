@@ -4,9 +4,9 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace BookAPI.Migrations
+namespace GrpcService.Migrations
 {
-    public partial class first_1 : Migration
+    public partial class first : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,12 +52,12 @@ namespace BookAPI.Migrations
                 columns: new[] { "Id", "Author", "IsAvailable", "Price", "ReleaseDate", "StudyProgrammeId", "Subject", "Title" },
                 values: new object[,]
                 {
-                    { 1, "TestAuthor1", true, 200.0, new DateTime(2022, 11, 2, 12, 25, 12, 500, DateTimeKind.Utc).AddTicks(147), 1, "System integration", "Enterprise integration patterns" },
-                    { 2, "TestAuthor2", true, 300.0, new DateTime(2022, 11, 2, 12, 25, 12, 500, DateTimeKind.Utc).AddTicks(150), 1, "System integration", "Soa" },
-                    { 3, "TestAuthor3", true, 200.0, new DateTime(2022, 11, 2, 12, 25, 12, 500, DateTimeKind.Utc).AddTicks(151), 2, "Development of large systems", "Guide to CI/CD" },
-                    { 4, "TestAuthor4", true, 350.0, new DateTime(2022, 11, 2, 12, 25, 12, 500, DateTimeKind.Utc).AddTicks(152), 2, "Development of large systems", "Guide to Git flow" },
-                    { 5, "TestAuthor5", true, 150.0, new DateTime(2022, 11, 2, 12, 25, 12, 500, DateTimeKind.Utc).AddTicks(153), 3, "Test", "Unit testing" },
-                    { 6, "TestAuthor6", true, 350.0, new DateTime(2022, 11, 2, 12, 25, 12, 500, DateTimeKind.Utc).AddTicks(154), 3, "Test", "Integration testing" }
+                    { 1, "TestAuthor1", true, 200.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1391), 1, "System integration", "Enterprise integration patterns" },
+                    { 2, "TestAuthor2", true, 300.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1393), 1, "System integration", "Soa" },
+                    { 3, "TestAuthor3", true, 200.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1394), 2, "Development of large systems", "Guide to CI/CD" },
+                    { 4, "TestAuthor4", true, 350.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1395), 2, "Development of large systems", "Guide to Git flow" },
+                    { 5, "TestAuthor5", true, 150.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1396), 3, "Test", "Unit testing" },
+                    { 6, "TestAuthor6", true, 350.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1397), 3, "Test", "Integration testing" }
                 });
 
             migrationBuilder.CreateIndex(

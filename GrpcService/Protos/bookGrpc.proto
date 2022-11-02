@@ -1,5 +1,5 @@
 syntax = "proto3";
-
+import "google/protobuf/timestamp.proto";
 option csharp_namespace = "GrpcService";
 
 package greet;
@@ -8,7 +8,24 @@ package greet;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc GetAllBooks (Empty) returns (BookReplyList);
 }
+
+message Empty{}
+message BookReply {
+	string Subject = 1;
+	string Title = 2;
+	string Author = 3;
+	double Price = 4;
+	string ReleaseDate = 5;
+	bool IsAvaible = 6;
+	int32 StudyProgrammeId = 7;
+}
+
+message BookReplyList{
+	repeated BookReply bookReply = 1;
+}
+
 
 // The request message containing the user's name.
 message HelloRequest {

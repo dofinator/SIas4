@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BookAPI.Models
+namespace GrpcService.Models
 {
     public class Book
     {
