@@ -32,35 +32,32 @@ namespace GrpcService.Context
                     new Book
                     {
                         Id = 1,
-                        Author = "TestAuthor1",
+                        Author = "sumit",
                         Price = 200,
-                        Subject = "System integration",
-                        Title = "Enterprise integration patterns",
+                        Subject = "How to code",
+                        Title = "C#",
                         IsAvailable = true,
-                        ReleaseDate = DateTime.UtcNow.ToString(),
                         StudyProgrammeId = 1
                     },
                        new Book
                        {
                            Id = 2,
-                           Author = "TestAuthor2",
+                           Author = "christoffer",
                            Price = 300,
                            Subject = "System integration",
                            Title = "Soa",
                            IsAvailable = true,
-                           ReleaseDate = DateTime.UtcNow.ToString(),
                            StudyProgrammeId = 1
                        },
 
                         new Book
                         {
                             Id = 3,
-                            Author = "TestAuthor3",
+                            Author = "Author3",
                             Price = 200,
                             Subject = "Development of large systems",
                             Title = "Guide to CI/CD",
                             IsAvailable = true,
-                            ReleaseDate = DateTime.UtcNow.ToString(),
                             StudyProgrammeId = 2
                         },
                         new Book
@@ -71,30 +68,7 @@ namespace GrpcService.Context
                             Subject = "Development of large systems",
                             Title = "Guide to Git flow",
                             IsAvailable = true,
-                            ReleaseDate = DateTime.UtcNow.ToString(),
                             StudyProgrammeId = 2
-                        },
-                        new Book
-                        {
-                            Id = 5,
-                            Author = "TestAuthor5",
-                            Price = 150,
-                            Subject = "Test",
-                            Title = "Unit testing",
-                            IsAvailable = true,
-                            ReleaseDate = DateTime.UtcNow.ToString(),
-                            StudyProgrammeId = 3
-                        },
-                        new Book
-                        {
-                            Id = 6,
-                            Author = "TestAuthor6",
-                            Price = 350,
-                            Subject = "Test",
-                            Title = "Integration testing",
-                            IsAvailable = true,
-                            ReleaseDate = DateTime.UtcNow.ToString(),
-                            StudyProgrammeId = 3
                         });
             }
         }

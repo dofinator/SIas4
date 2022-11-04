@@ -8,9 +8,9 @@ namespace schoolAPI.Services
     public interface IStudentService
     {
         public Task<bool> CreateStudent(StudentDTO student);
-        public Task<bool> UpdateStudent(long id, StudentDTO student);
-        public Task<bool> DeleteStudent(long id);
-        public Task<StudentDTO> FindStudent(long id);
+        public Task<bool> UpdateStudent(int id, StudentDTO student);
+        public Task<bool> DeleteStudent(int id);
+        public Task<StudentDTO> FindStudent(int id);
     }
     public class StudentService : IStudentService
     {
@@ -41,12 +41,12 @@ namespace schoolAPI.Services
             
         }
 
-        public async Task<bool> DeleteStudent(long id)
+        public async Task<bool> DeleteStudent(int id)
         {
             return await _studentRepository.DeleteStudent(id);
         }
 
-        public async Task<StudentDTO> FindStudent(long id)
+        public async Task<StudentDTO> FindStudent(int id)
         {
             try
             {
@@ -60,7 +60,7 @@ namespace schoolAPI.Services
             }
         }
 
-        public async Task<bool> UpdateStudent(long id, StudentDTO student)
+        public async Task<bool> UpdateStudent(int id, StudentDTO student)
         {
             try
             {

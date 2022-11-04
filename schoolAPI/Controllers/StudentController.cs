@@ -23,19 +23,19 @@ namespace schoolAPI.Controllers
         }
         [Route("")]
         [HttpGet]
-        public async Task <StudentDTO> FindStudent(long id)
+        public async Task <StudentDTO> FindStudent(int id)
         {
             return await _studentService.FindStudent(id);
         }
         [Route("")]
         [HttpDelete]
-        public async Task <bool> DeleteStudent (long id)
+        public async Task <bool> DeleteStudent (int id)
         {
             return await _studentService.DeleteStudent(id);
         }
         [Route("")]
         [HttpPatch]
-        public async Task <bool> UpdateStudent(long id, StudentDTO studentDTO)
+        public async Task <bool> UpdateStudent(int id, StudentDTO studentDTO)
         {
             return await _studentService.UpdateStudent(id, studentDTO);
         }

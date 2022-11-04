@@ -2,6 +2,7 @@
 using GrpcService.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -10,9 +11,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GrpcService.Migrations
 {
     [DbContext(typeof(DbApplicationContext))]
-    partial class DbApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20221102162203_done")]
+    partial class done
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,6 +41,10 @@ namespace GrpcService.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("double precision");
 
+                    b.Property<string>("ReleaseDate")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("StudyProgrammeId")
                         .HasColumnType("integer");
 
@@ -58,19 +64,21 @@ namespace GrpcService.Migrations
                         new
                         {
                             Id = 1,
-                            Author = "sumit",
+                            Author = "TestAuthor1",
                             IsAvailable = true,
                             Price = 200.0,
+                            ReleaseDate = "11/2/2022 4:22:03 PM",
                             StudyProgrammeId = 1,
-                            Subject = "How to code",
-                            Title = "C#"
+                            Subject = "System integration",
+                            Title = "Enterprise integration patterns"
                         },
                         new
                         {
                             Id = 2,
-                            Author = "christoffer",
+                            Author = "TestAuthor2",
                             IsAvailable = true,
                             Price = 300.0,
+                            ReleaseDate = "11/2/2022 4:22:03 PM",
                             StudyProgrammeId = 1,
                             Subject = "System integration",
                             Title = "Soa"
@@ -78,9 +86,10 @@ namespace GrpcService.Migrations
                         new
                         {
                             Id = 3,
-                            Author = "Author3",
+                            Author = "TestAuthor3",
                             IsAvailable = true,
                             Price = 200.0,
+                            ReleaseDate = "11/2/2022 4:22:03 PM",
                             StudyProgrammeId = 2,
                             Subject = "Development of large systems",
                             Title = "Guide to CI/CD"
@@ -91,9 +100,32 @@ namespace GrpcService.Migrations
                             Author = "TestAuthor4",
                             IsAvailable = true,
                             Price = 350.0,
+                            ReleaseDate = "11/2/2022 4:22:03 PM",
                             StudyProgrammeId = 2,
                             Subject = "Development of large systems",
                             Title = "Guide to Git flow"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Author = "TestAuthor5",
+                            IsAvailable = true,
+                            Price = 150.0,
+                            ReleaseDate = "11/2/2022 4:22:03 PM",
+                            StudyProgrammeId = 3,
+                            Subject = "Test",
+                            Title = "Unit testing"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Author = "TestAuthor6",
+                            IsAvailable = true,
+                            Price = 350.0,
+                            ReleaseDate = "11/2/2022 4:22:03 PM",
+                            StudyProgrammeId = 3,
+                            Subject = "Test",
+                            Title = "Integration testing"
                         });
                 });
 

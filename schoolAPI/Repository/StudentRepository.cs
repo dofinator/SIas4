@@ -6,9 +6,9 @@ namespace schoolAPI.Repository
     public interface IStudentRepository
     {
         public Task<bool> CreateStudent(Student student);
-        public Task<bool> UpdateStudent(long id, Student student);
-        public Task<bool> DeleteStudent(long id);
-        public Task<Student> FindStudent(long id);
+        public Task<bool> UpdateStudent(int id, Student student);
+        public Task<bool> DeleteStudent(int id);
+        public Task<Student> FindStudent(int id);
 
     }
     public class StudentRepository : IStudentRepository
@@ -37,7 +37,7 @@ namespace schoolAPI.Repository
             
         }
 
-        public async Task<bool> DeleteStudent(long id)
+        public async Task<bool> DeleteStudent(int id)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace schoolAPI.Repository
            
         }
 
-        public async Task<Student> FindStudent(long id)
+        public async Task<Student> FindStudent(int id)
         {
             try
             {
@@ -71,7 +71,7 @@ namespace schoolAPI.Repository
             
         }
 
-        public async Task<bool> UpdateStudent(long id, Student student)
+        public async Task<bool> UpdateStudent(int id, Student student)
         {
             try
             {

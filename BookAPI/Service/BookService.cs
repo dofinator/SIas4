@@ -9,34 +9,79 @@ namespace BookAPI.Service
         public Task<List<Book>> GetAllBooks();
         public Task<List<Book>> GetAllBooksfiltered(string? subject, double? budget);
 
-        public Task <bool> BuyBook (BuyBookDto BuyBookDto);
+        public Task<bool> BuyBook(BuyBookDto buyBookDto);
 
         public Task<bool> ReturnBook(int bookId);
     }
     public class BookService : IBookService
     {
-        public Task<bool> BuyBook(BuyBookDto BuyBookDto)
-        {
-            throw new NotImplementedException();
-        }
-
-        public  async Task<List<Book>> GetAllBooks()
+        public async Task<bool> BuyBook(BuyBookDto buyBookDto)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:7011");
             var client = new Greeter.GreeterClient(channel);
-            var ost =  client.GetAllBooks(new Empty());
-           var listOfBooks =  ost.BookReply.Select(b => new Book { Subject = b.Subject, Title = b.Title, Author = b.Author, Price = b.Price, ReleaseDate = b.ReleaseDate, IsAvailable = b.IsAvaible, StudyProgrammeId = b.StudyProgrammeId }).ToList();
+
+            return client.BuyBook(
+                new BuyBookRequest
+                {
+                    BookId = buyBookDto.BookId,
+                    StudentId = buyBookDto.StudentId
+                }).IsSucces;
+        }
+
+        public async Task<List<Book>> GetAllBooks()
+        {
+            var channel = GrpcChannel.ForAddress("https://localhost:7011");
+            var client = new Greeter.GreeterClient(channel);
+            var books = client.GetAllBooks(new Empty());
+
+            var listOfBooks = books.BookReply.Select(b =>
+            new Book
+            {
+                Subject = b.Subject,
+                Title = b.Title,
+                Author = b.Author,
+                Price = b.Price,
+                IsAvailable = b.IsAvaible,
+                StudyProgrammeId = b.StudyProgrammeId
+            }).ToList();
+
             return listOfBooks;
         }
 
-        public Task<List<Book>> GetAllBooksfiltered(string? subject, double? budget)
+        public async Task<List<Book>> GetAllBooksfiltered(string? subject, double? budget)
         {
-            throw new NotImplementedException();
+            var channel = GrpcChannel.ForAddress("https://localhost:7011");
+            var client = new Greeter.GreeterClient(channel);
+            var books = client.GetAllBooksFiltered(new BooksRequest
+            {
+                Budget = !budget.HasValue ? 0 : (double)budget,
+                Subject = !String.IsNullOrEmpty(subject) ? subject : "",
+            });
+
+            var listOfBooks = books.BookReply.Select(b =>
+            new Book
+            {
+                Subject = b.Subject,
+                Title = b.Title,
+                Author = b.Author,
+                Price = b.Price,
+                IsAvailable = b.IsAvaible,
+                StudyProgrammeId = b.StudyProgrammeId
+            }).ToList();
+
+            return listOfBooks;
         }
 
-        public Task<bool> ReturnBook(int bookId)
+        public async Task<bool> ReturnBook(int bookId)
         {
-            throw new NotImplementedException();
+            var channel = GrpcChannel.ForAddress("https://localhost:7011");
+            var client = new Greeter.GreeterClient(channel);
+
+            return client.ReturnBook(
+             new ReturnBookRequest
+             {
+                 BookId = bookId
+             }).IsSucces;
         }
     }
 }

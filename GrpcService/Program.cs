@@ -11,9 +11,12 @@ var configuration = builder.Configuration;
 // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
 
 // Add services to the container.
-builder.Services.AddScoped<IBookRepository, BookRepository>();
+
 builder.Services.AddDbContext<DbApplicationContext>(options =>
 options.UseNpgsql(configuration.GetConnectionString("myDb1")));
+
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
 builder.Services.AddGrpc();
 
 var app = builder.Build();
