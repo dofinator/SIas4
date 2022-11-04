@@ -6,8 +6,8 @@ namespace BookAPI.Service
 {
     public interface IBookService
     {
-        public Task<List<Book>> GetAllBooks();
-        public Task<List<Book>> GetAllBooksfiltered(string? subject, double? budget);
+        public Task<List<Book>> GetBooks();
+        public Task<List<Book>> GetBooksfiltered(string? subject, double? budget);
 
         public Task<bool> BuyBook(BuyBookDto buyBookDto);
 
@@ -28,11 +28,11 @@ namespace BookAPI.Service
                 }).IsSucces;
         }
 
-        public async Task<List<Book>> GetAllBooks()
+        public async Task<List<Book>> GetBooks()
         {
             var channel = GrpcChannel.ForAddress("https://localhost:7011");
             var client = new Greeter.GreeterClient(channel);
-            var books = client.GetAllBooks(new Empty());
+            var books = client.GetBooks(new Empty());
 
             var listOfBooks = books.BookReply.Select(b =>
             new Book
@@ -48,11 +48,11 @@ namespace BookAPI.Service
             return listOfBooks;
         }
 
-        public async Task<List<Book>> GetAllBooksfiltered(string? subject, double? budget)
+        public async Task<List<Book>> GetBooksfiltered(string? subject, double? budget)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:7011");
             var client = new Greeter.GreeterClient(channel);
-            var books = client.GetAllBooksFiltered(new BooksRequest
+            var books = client.GetBooksFiltered(new BooksRequest
             {
                 Budget = !budget.HasValue ? 0 : (double)budget,
                 Subject = !String.IsNullOrEmpty(subject) ? subject : "",

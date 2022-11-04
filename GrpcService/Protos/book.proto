@@ -8,8 +8,8 @@ package greet;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
-  rpc GetAllBooks (Empty) returns (BookReplyList);
-  rpc GetAllBooksFiltered (BooksRequest) returns (BookReplyList);
+  rpc GetBooks (Empty) returns (BookReplyList);
+  rpc GetBooksFiltered (BooksRequest) returns (BookReplyList);
   rpc ReturnBook (ReturnBookRequest) returns (BookResponse);
   rpc BuyBook(BuyBookRequest) returns(BookResponse);
 }

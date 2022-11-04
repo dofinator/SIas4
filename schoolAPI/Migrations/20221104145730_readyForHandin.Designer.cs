@@ -8,11 +8,11 @@ using schoolAPI.Contexts;
 
 #nullable disable
 
-namespace schoolAPI.Migrations
+namespace SchoolAPI.Migrations
 {
     [DbContext(typeof(DbApplicationContext))]
-    [Migration("20221101213018_will_work_8")]
-    partial class will_work_8
+    [Migration("20221104145730_readyForHandin")]
+    partial class readyForHandin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,11 @@ namespace schoolAPI.Migrations
 
             modelBuilder.Entity("schoolAPI.Models.Student", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -46,31 +46,25 @@ namespace schoolAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1L,
-                            Email = "dsd",
-                            Name = "asd"
+                            Id = 1,
+                            Email = "Sumit@gmail.com",
+                            Name = "Sumit"
                         },
                         new
                         {
-                            Id = 2L,
-                            Email = "fsdff",
-                            Name = "jeasdasdwadns"
-                        },
-                        new
-                        {
-                            Id = 3L,
-                            Email = "asdasdfdsf",
-                            Name = "sdfsdfasf"
+                            Id = 2,
+                            Email = "Christoffer@gmail.com",
+                            Name = "Christoffer"
                         });
                 });
 
             modelBuilder.Entity("schoolAPI.Models.StudentStudyProgramme", b =>
                 {
-                    b.Property<long>("StudentId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("StudentId")
+                        .HasColumnType("integer");
 
-                    b.Property<long>("StudyProgrammeId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("StudyProgrammeId")
+                        .HasColumnType("integer");
 
                     b.HasKey("StudentId", "StudyProgrammeId");
 
@@ -81,18 +75,33 @@ namespace schoolAPI.Migrations
                     b.HasData(
                         new
                         {
-                            StudentId = 1L,
-                            StudyProgrammeId = 1L
+                            StudentId = 1,
+                            StudyProgrammeId = 1
+                        },
+                        new
+                        {
+                            StudentId = 2,
+                            StudyProgrammeId = 1
+                        },
+                        new
+                        {
+                            StudentId = 1,
+                            StudyProgrammeId = 2
+                        },
+                        new
+                        {
+                            StudentId = 2,
+                            StudyProgrammeId = 3
                         });
                 });
 
             modelBuilder.Entity("schoolAPI.Models.StudyProgramme", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -105,17 +114,17 @@ namespace schoolAPI.Migrations
                     b.HasData(
                         new
                         {
-                            Id = 1L,
-                            Name = "System Integration"
+                            Id = 1,
+                            Name = "SI"
                         },
                         new
                         {
-                            Id = 2L,
-                            Name = "Development of Large Systems"
+                            Id = 2,
+                            Name = "DLS"
                         },
                         new
                         {
-                            Id = 3L,
+                            Id = 3,
                             Name = "Test"
                         });
                 });

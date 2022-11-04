@@ -41,16 +41,14 @@ namespace schoolAPI.Contexts
 
 
             builder.Entity<Student>().HasData(
-                new Student { Name = "Phillip", Email = "Phillip@gmail.com", Id = 1 },
-                new Student { Name = "Sumit", Email = "Sumit@gmail.com", Id = 2},
-                new Student { Name = "Lukas", Email = "Lukas@gmail.com", Id = 3 },
-                new Student { Name = "Christoffer", Email = "Christoffer@gmail.com", Id = 4 }
+                new Student { Name = "Sumit", Email = "Sumit@gmail.com", Id = 1},
+                new Student { Name = "Christoffer", Email = "Christoffer@gmail.com", Id = 2 }
                 );
 
 
             builder.Entity<StudyProgramme>().HasData(
-                new StudyProgramme { Name = "System Integration", Id = 1 },
-                new StudyProgramme { Name = "Development of Large Systems", Id = 2 },
+                new StudyProgramme { Name = "SI", Id = 1 },
+                new StudyProgramme { Name = "DLS", Id = 2 },
                 new StudyProgramme { Name = "Test", Id = 3 }
             );
 
@@ -58,8 +56,8 @@ namespace schoolAPI.Contexts
             builder.Entity<StudentStudyProgramme>().HasData(
                 new StudentStudyProgramme { StudentId = 1, StudyProgrammeId = 1},
                 new StudentStudyProgramme { StudentId = 2, StudyProgrammeId = 1 },
-                new StudentStudyProgramme { StudentId = 3, StudyProgrammeId = 1 },
-                new StudentStudyProgramme { StudentId = 4, StudyProgrammeId = 1 }
+                new StudentStudyProgramme { StudentId = 1, StudyProgrammeId = 2 },
+                new StudentStudyProgramme { StudentId = 2, StudyProgrammeId = 3 }
                 );
 
         }

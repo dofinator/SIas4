@@ -7,8 +7,8 @@ namespace GrpcService.Repository
 
     public interface IBookRepository
     {
-        Task<List<Book>> GetAllBooks();
-        Task<List<Book>> GetAllBooksFiltered(string? subject, double? budget);
+        Task<List<Book>> GetBooks();
+        Task<List<Book>> GetBooksFiltered(string? subject, double? budget);
         Task<bool> BuyBook(BuyBookDto buyBookDto);
         Task<bool> ReturnBook(int bookId);
     }
@@ -45,12 +45,12 @@ namespace GrpcService.Repository
             return true;
         }
 
-        public async Task<List<Book>> GetAllBooks()
+        public async Task<List<Book>> GetBooks()
         {
             return await _context.Books.ToListAsync();
         }
 
-        public async Task<List<Book>> GetAllBooksFiltered(string? subject, double? budget)
+        public async Task<List<Book>> GetBooksFiltered(string? subject, double? budget)
         {
             List<Book> books = null;
 

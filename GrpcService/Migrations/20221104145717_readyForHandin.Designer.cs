@@ -8,11 +8,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace GrpcService.Migrations
+namespace gRPCservice.Migrations
 {
     [DbContext(typeof(DbApplicationContext))]
-    [Migration("20221104092603_prod")]
-    partial class prod
+    [Migration("20221104145717_readyForHandin")]
+    partial class readyForHandin
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,22 +80,22 @@ namespace GrpcService.Migrations
                         new
                         {
                             Id = 3,
-                            Author = "Author3",
+                            Author = "Alham",
                             IsAvailable = true,
                             Price = 200.0,
                             StudyProgrammeId = 2,
-                            Subject = "Development of large systems",
-                            Title = "Guide to CI/CD"
+                            Subject = "May he be with u",
+                            Title = "Guide to Heaven"
                         },
                         new
                         {
                             Id = 4,
-                            Author = "TestAuthor4",
+                            Author = "Praktik soon",
                             IsAvailable = true,
                             Price = 350.0,
-                            StudyProgrammeId = 2,
-                            Subject = "Development of large systems",
-                            Title = "Guide to Git flow"
+                            StudyProgrammeId = 3,
+                            Subject = "How to ace praktik",
+                            Title = "Praktik for gods"
                         });
                 });
 

@@ -53,22 +53,22 @@ namespace GrpcService.Context
                         new Book
                         {
                             Id = 3,
-                            Author = "Author3",
+                            Author = "Alham",
                             Price = 200,
-                            Subject = "Development of large systems",
-                            Title = "Guide to CI/CD",
+                            Subject = "May he be with u",
+                            Title = "Guide to Heaven",
                             IsAvailable = true,
                             StudyProgrammeId = 2
                         },
                         new Book
                         {
                             Id = 4,
-                            Author = "TestAuthor4",
+                            Author = "Praktik soon",
                             Price = 350,
-                            Subject = "Development of large systems",
-                            Title = "Guide to Git flow",
+                            Subject = "How to ace praktik",
+                            Title = "Praktik for gods",
                             IsAvailable = true,
-                            StudyProgrammeId = 2
+                            StudyProgrammeId = 3
                         });
             }
         }

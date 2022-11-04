@@ -7,7 +7,7 @@ using schoolAPI.Contexts;
 
 #nullable disable
 
-namespace schoolAPI.Migrations
+namespace SchoolAPI.Migrations
 {
     [DbContext(typeof(DbApplicationContext))]
     partial class DbApplicationContextModelSnapshot : ModelSnapshot
@@ -45,24 +45,12 @@ namespace schoolAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Email = "Phillip@gmail.com",
-                            Name = "Phillip"
-                        },
-                        new
-                        {
-                            Id = 2,
                             Email = "Sumit@gmail.com",
                             Name = "Sumit"
                         },
                         new
                         {
-                            Id = 3,
-                            Email = "Lukas@gmail.com",
-                            Name = "Lukas"
-                        },
-                        new
-                        {
-                            Id = 4,
+                            Id = 2,
                             Email = "Christoffer@gmail.com",
                             Name = "Christoffer"
                         });
@@ -95,13 +83,13 @@ namespace schoolAPI.Migrations
                         },
                         new
                         {
-                            StudentId = 3,
-                            StudyProgrammeId = 1
+                            StudentId = 1,
+                            StudyProgrammeId = 2
                         },
                         new
                         {
-                            StudentId = 4,
-                            StudyProgrammeId = 1
+                            StudentId = 2,
+                            StudyProgrammeId = 3
                         });
                 });
 
@@ -125,12 +113,12 @@ namespace schoolAPI.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "System Integration"
+                            Name = "SI"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Development of Large Systems"
+                            Name = "DLS"
                         },
                         new
                         {

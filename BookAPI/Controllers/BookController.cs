@@ -15,15 +15,15 @@ namespace BookAPI.Controllers
         }
 
         [HttpGet("")]
-        public async Task<List<Book>> GetAllBooks()
+        public async Task<List<Book>> GetBooks()
         {
-            return await _bookService.GetAllBooks();
+            return await _bookService.GetBooks();
         }
 
         [HttpGet("booksfiltered")]
-        public async Task<List<Book>> GetAllBooksFiltered([FromQuery] BooksFilteredDto booksFilteredDto)
+        public async Task<List<Book>> GetBooksFiltered([FromQuery] BooksFilteredDto booksFilteredDto)
         {
-            return await _bookService.GetAllBooksfiltered(booksFilteredDto.Subject, booksFilteredDto.Budget);
+            return await _bookService.GetBooksfiltered(booksFilteredDto.Subject, booksFilteredDto.Budget);
         }
 
         [HttpPost]

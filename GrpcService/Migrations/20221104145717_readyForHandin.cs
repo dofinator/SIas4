@@ -1,12 +1,11 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace GrpcService.Migrations
+namespace gRPCservice.Migrations
 {
-    public partial class first : Migration
+    public partial class readyForHandin : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,7 +19,6 @@ namespace GrpcService.Migrations
                     Title = table.Column<string>(type: "text", nullable: false),
                     Author = table.Column<string>(type: "text", nullable: false),
                     Price = table.Column<double>(type: "double precision", nullable: false),
-                    ReleaseDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     IsAvailable = table.Column<bool>(type: "boolean", nullable: false),
                     StudyProgrammeId = table.Column<int>(type: "integer", nullable: false)
                 },
@@ -49,15 +47,13 @@ namespace GrpcService.Migrations
 
             migrationBuilder.InsertData(
                 table: "Books",
-                columns: new[] { "Id", "Author", "IsAvailable", "Price", "ReleaseDate", "StudyProgrammeId", "Subject", "Title" },
+                columns: new[] { "Id", "Author", "IsAvailable", "Price", "StudyProgrammeId", "Subject", "Title" },
                 values: new object[,]
                 {
-                    { 1, "TestAuthor1", true, 200.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1391), 1, "System integration", "Enterprise integration patterns" },
-                    { 2, "TestAuthor2", true, 300.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1393), 1, "System integration", "Soa" },
-                    { 3, "TestAuthor3", true, 200.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1394), 2, "Development of large systems", "Guide to CI/CD" },
-                    { 4, "TestAuthor4", true, 350.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1395), 2, "Development of large systems", "Guide to Git flow" },
-                    { 5, "TestAuthor5", true, 150.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1396), 3, "Test", "Unit testing" },
-                    { 6, "TestAuthor6", true, 350.0, new DateTime(2022, 11, 2, 14, 21, 29, 151, DateTimeKind.Utc).AddTicks(1397), 3, "Test", "Integration testing" }
+                    { 1, "sumit", true, 200.0, 1, "How to code", "C#" },
+                    { 2, "christoffer", true, 300.0, 1, "System integration", "Soa" },
+                    { 3, "Alham", true, 200.0, 2, "May he be with u", "Guide to Heaven" },
+                    { 4, "Praktik soon", true, 350.0, 3, "How to ace praktik", "Praktik for gods" }
                 });
 
             migrationBuilder.CreateIndex(

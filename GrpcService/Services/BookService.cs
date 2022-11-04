@@ -13,9 +13,9 @@ namespace GrpcService.Services
         {
             _bookRepository = bookRepository;
         }
-        public async override Task<BookReplyList> GetAllBooks(Empty empty, ServerCallContext context)
+        public async override Task<BookReplyList> GetBooks(Empty empty, ServerCallContext context)
         {
-            var books = await _bookRepository.GetAllBooks();
+            var books = await _bookRepository.GetBooks();
 
             var tempBooksList = books.Select(b =>
             new BookReply
@@ -34,9 +34,9 @@ namespace GrpcService.Services
             return bookReplyList;
         }
 
-        public async override Task<BookReplyList> GetAllBooksFiltered(BooksRequest booksRequest, ServerCallContext context)
+        public async override Task<BookReplyList> GetBooksFiltered(BooksRequest booksRequest, ServerCallContext context)
         {
-            var books = await _bookRepository.GetAllBooksFiltered(booksRequest.Subject, booksRequest.Budget);
+            var books = await _bookRepository.GetBooksFiltered(booksRequest.Subject, booksRequest.Budget);
             var tempBooksList = books.Select(b =>
               new BookReply
               {
